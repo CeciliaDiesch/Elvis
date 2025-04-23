@@ -27,16 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
     clickSound.play();
   });
 
-  // Videos stummschalten und Ambient-Sound beim Klick starten
-  document.querySelectorAll('video').forEach((video) => {
-    video.muted = true;
-    video.style.cursor = 'pointer';
-    video.addEventListener('click', () => {
-      ambientSound.currentTime = 0;
-      ambientSound.play();
-    });
-  });
-
   // 3) Modal für allgemeine Galerie
   const modal = document.getElementById('modal');
   const modalImg = document.getElementById('modal-img');
@@ -71,36 +61,73 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // 4) Modal für Unterkunfts‑Galerie
-  const accomModal = document.getElementById('accommodationModal');
-  const modalAccomImg = document.getElementById('modal-accom-img');
-  const accomItems = document.querySelectorAll('.accommodation-gallery figure img');
-  const closeAccom = document.querySelector('.closeAccom');
-  const nextAccom = document.querySelector('.nextAccom');
-  const prevAccom = document.querySelector('.prevAccom');
-  let currentAccomIndex = 0;
-  const accomSrc = [];
+  /**
+   * Initialisiert ein Modal, das auf Klick
+   * sowohl Bilder als auch Videos anzeigt.
+   */
+  function initGalleryModal(modalId, selector) {
+    const modal = document.getElementById(modalId);
+    const modalImg = modal.querySelector('img.modal-content');
+    const modalVideo = modal.querySelector('video.modal-content');
+    const items = document.querySelectorAll(selector);
+    const closeBtn = modal.querySelector('.close');
+    const nextBtn = modal.querySelector('.next');
+    const prevBtn = modal.querySelector('.prev');
 
-  accomItems.forEach((img, idx) => {
-    accomSrc.push(img.src);
-    img.addEventListener('click', () => {
-      currentAccomIndex = idx;
-      accomModal.style.display = 'block';
-      modalAccomImg.src = accomSrc[currentAccomIndex];
+    let currentIndex = 0;
+    // Listen mit Quellen und Typen (IMG/VIDEO)
+    const srcList = Array.from(items).map((el) => (el.tagName === 'IMG' ? el.src : el.querySelector('source').src));
+    const typeList = Array.from(items).map((el) => el.tagName);
+
+    function showMedia(idx) {
+      const src = srcList[idx];
+      const type = typeList[idx];
+      if (type === 'IMG') {
+        // Bild
+        modalVideo.pause();
+        modalVideo.style.display = 'none';
+        modalImg.src = src;
+        modalImg.style.display = '';
+      } else {
+        // Video
+        modalImg.style.display = 'none';
+        modalVideo.src = src;
+        modalVideo.style.display = '';
+        modalVideo.load();
+        modalVideo.play();
+      }
+    }
+
+    // Klick auf ein Galerie-Item öffnet das Modal
+    items.forEach((el, idx) => {
+      el.style.cursor = 'pointer';
+      el.addEventListener('click', () => {
+        currentIndex = idx;
+        showMedia(currentIndex);
+        modal.style.display = 'block';
+      });
     });
-  });
 
-  closeAccom.addEventListener('click', () => (accomModal.style.display = 'none'));
-  nextAccom.addEventListener('click', () => {
-    currentAccomIndex = (currentAccomIndex + 1) % accomSrc.length;
-    modalAccomImg.src = accomSrc[currentAccomIndex];
-  });
-  prevAccom.addEventListener('click', () => {
-    currentAccomIndex = (currentAccomIndex - 1 + accomSrc.length) % accomSrc.length;
-    modalAccomImg.src = accomSrc[currentAccomIndex];
-  });
-  window.addEventListener('click', (e) => {
-    if (e.target === accomModal) accomModal.style.display = 'none';
-  });
+    // Navigation & schließen
+    closeBtn.addEventListener('click', () => (modal.style.display = 'none'));
+    nextBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % srcList.length;
+      showMedia(currentIndex);
+    });
+    prevBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + srcList.length) % srcList.length;
+      showMedia(currentIndex);
+    });
+    // Klick außerhalb schließt
+    window.addEventListener('click', (e) => {
+      if (e.target === modal) modal.style.display = 'none';
+    });
+  }
+
+  // Hier initialisieren wir alle drei Galerien:
+  initGalleryModal('modal', '.gallery img, .gallery video');
+  initGalleryModal('accommodationModal', '.accommodation-gallery img, .accommodation-gallery video');
+  initGalleryModal('ayahuascaModal', '.ayahuasca-gallery img, .ayahuasca-gallery video');
 
   // 5) Soundeffekte bei Mouseenter in den Galerien
   galleryItems.forEach((el) => el.addEventListener('mouseenter', () => clickSound.play()));

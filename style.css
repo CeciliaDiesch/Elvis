@@ -73,7 +73,7 @@ header p {
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
 }
 
-/* Sound‑Icon */
+/* Sound-Icon */
 .sound-icon {
   position: absolute;
   top: 5px;
@@ -84,12 +84,6 @@ header p {
   z-index: 100;
   background: transparent !important;
   border: none;
-}
-
-
-/* Banana‑Cursor */
-.banana-zone {
-  cursor: url('assets/images/cursor/banana1.jpg') 16 16, auto;
 }
 
 /* Navigation */
@@ -208,7 +202,6 @@ section h2::after {
   margin: 10px 0;
 }
 
-
 /* Galerie (horizontal scrollen) */
 .gallery {
   display: flex;
@@ -289,9 +282,10 @@ section h2::after {
 }
 
 /* ==============================
-   Unterkunfts‑Galerie (responsive & Caption an Image gebunden)
+   Unterkunfts- & Ayahuasca-Galerie (responsive & Caption an Image gebunden)
    ============================== */
-.accommodation-gallery {
+.accommodation-gallery,
+.ayahuasca-gallery {
   display: flex;
   gap: 15px;
   overflow-x: auto;
@@ -300,21 +294,23 @@ section h2::after {
   scroll-snap-type: x mandatory;
 }
 
-.accommodation-gallery::-webkit-scrollbar {
+.accommodation-gallery::-webkit-scrollbar,
+.ayahuasca-gallery::-webkit-scrollbar {
   height: 6px;
 }
 
-.accommodation-gallery::-webkit-scrollbar-thumb {
+.accommodation-gallery::-webkit-scrollbar-thumb,
+.ayahuasca-gallery::-webkit-scrollbar-thumb {
   background: rgba(0, 0, 0, 0.2);
   border-radius: 3px;
 }
 
 /* Jeder Figure shrinkt auf Content-Breite (das Bild) */
-.accommodation-gallery>figure {
+.accommodation-gallery>figure,
+.ayahuasca-gallery>figure {
   flex: 0 0 auto;
   scroll-snap-align: start;
   display: inline-block;
-  /* passt sich der Bild-Breite an */
   text-align: center;
   background: #f4f4f4;
   border-radius: 10px;
@@ -322,6 +318,7 @@ section h2::after {
   height: auto;
 }
 
+/* Optional: feste Breiten wie zuvor */
 .figure-landscape {
   width: 350px;
 }
@@ -330,10 +327,11 @@ section h2::after {
   width: 175px;
 }
 
-
 /* Bild / Video: feste Höhe, Breite proportional */
 .accommodation-gallery figure img,
-.accommodation-gallery figure video {
+.accommodation-gallery figure video,
+.ayahuasca-gallery figure img,
+.ayahuasca-gallery figure video {
   display: block;
   height: 250px;
   object-fit: cover;
@@ -342,15 +340,17 @@ section h2::after {
 }
 
 .accommodation-gallery figure:hover img,
-.accommodation-gallery figure:hover video {
+.accommodation-gallery figure:hover video,
+.ayahuasca-gallery figure:hover img,
+.ayahuasca-gallery figure:hover video {
   transform: scale(1.05);
 }
 
 /* Caption exakt Bild-Breite, umbrechbar */
-.accommodation-gallery figure figcaption {
+.accommodation-gallery figure figcaption,
+.ayahuasca-gallery figure figcaption {
   display: block;
   width: 100%;
-  /* exakt so breit wie das Bild */
   box-sizing: border-box;
   padding: 4px 8px;
   font-size: 0.9em;
@@ -360,7 +360,7 @@ section h2::after {
   margin-top: 4px;
 }
 
-/* Drohnenaufnahmen‑Galerie */
+/* Drohnenaufnahmen-Galerie */
 .drone-gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -420,7 +420,6 @@ section h2::after {
 .review.hover-img:hover img.review-image {
   display: block;
 }
-
 
 /* WhatsApp Button */
 .whatsapp-button {

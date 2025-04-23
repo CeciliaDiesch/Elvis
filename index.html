@@ -34,7 +34,7 @@
       <img id="sound-toggle" src="assets/icons/nosound.png" alt="Sound aus" class="sound-icon" />
     </header>
 
-    <main class="banana-zone">
+    <main>
       <!-- Über Elvis -->
       <section id="ueber">
         <h2>Über Elvis</h2>
@@ -137,6 +137,7 @@
           Aufladen von Geräten und zum Kochen steht täglich für einige Stunden Strom zur Verfügung. Die Unterkünfte sind allesamt etwas erhöht gebaut, da in der Regenzeit das Wasser stark ansteigen
           kann. Die Gebäude sind regen- und moskitosicher und nur mit dem Boot erreichbar. Wer mag, kann direkt vor der Lodge schwimmen – und mit etwas Geduld lassen sich sogar die Delfine direkt vor
           der Haustür blicken. Serviert wird traditionelles Essen. Manchmal gibt es auch geröstete Macambo-Kerne, wenn man die Früchte auf einer Dschungelwanderung findet und mit zurückbringt.
+          Vegetarische Kost ist auf Anfrage möglich, und auch andere besondere Wünsche bezüglich der Verpflegung werden im Rahmen der örtlichen Möglichkeiten gern berücksichtigt.
         </p>
         <div class="accommodation-gallery">
           <figure class="figure-portrait">
@@ -198,7 +199,7 @@
         </div>
 
         <!-- Ayahuasca‑Galerie -->
-        <div class="accommodation-gallery">
+        <div class="ayahuasca-gallery">
           <figure class="figure-portrait">
             <img class="figure-portrait" src="assets/images/Ayahuasca/Aya1.jpeg" alt="Schamane bereitet Ayahuasca vor" />
             <figcaption>Vorbereitung der Ayahuasca Pflanze</figcaption>
@@ -332,7 +333,7 @@
       <section id="rezensionen">
         <h2>Rezensionen</h2>
         <div class="reviews">
-          <article class="review">
+          <article class="review hover-img">
             <p>
               "Ich bin vor ein paar Tagen aus der selva in der Nähe von Iquitos zurück nach Lima gekommen. Habe Elvis dort getroffen. Was für ein schöner Mensch und Ort - nach wie vor geht mein ganzes
               Herz auf, wenn ich an meine Zeit im Dschungel denke."
@@ -344,13 +345,17 @@
             <img style="width: 80%" src="assets/images/Rezensionen/Kalle.jpeg" alt="Kalle" class="review-image" />
             <p class="reviewer">- Kalle W.</p>
           </article>
-          <article class="review">
-            <p>"Elvis ist nicht nur ein exzellenter Schamane, sondern auch ein Erkundungsbegeisterter Djungelguide und wunderbarer Gastgeber."</p>
-            <p class="reviewer">- Markus T.</p>
+          <article class="review hover-img">
+            <p>
+              "Elvis ist nicht nur ein exzellenter Schamane, sondern auch ein wunderbarer Gastgeber. Seine Begeisterung den Djungel zu erkunden steckt sofort an. Der Moment bestimmt den Weg. Es ist
+              wundervoll in diese andere Welt abtauchen zu dürfen."
+            </p>
+            <img style="width: 80%" src="assets/images/Rezensionen/CaroCeci.jpeg" alt="CaroCecilia" class="review-image" />
+            <p class="reviewer">- Carolin D. und Cecilia D.</p>
           </article>
-          <article class="review">
+          <article class="review hover-img">
             <p>"Die Tour bot uns tiefe Einblicke in das Leben im Dschungel und die Naturverbundenheit des Amazonas."</p>
-            <p class="reviewer">- Lisa K.</p>
+            <p class="reviewer">- Isabel K.</p>
           </article>
         </div>
       </section>
@@ -358,7 +363,7 @@
       <!-- Kontakt -->
       <section id="kontakt">
         <h2>Kontakt</h2>
-        <p>Für Buchungen und weitere Informationen kontaktiere uns bitte über WhatsApp:</p>
+        <p>Für Buchungen und weitere Informationen kontaktiere Sie Elvis über WhatsApp:</p>
         <a href="https://wa.me/1234567890" target="_blank" class="whatsapp-button">WhatsApp Kontakt</a>
       </section>
     </main>
@@ -366,17 +371,28 @@
     <!-- Modal für allgemeine Galerie -->
     <div id="modal" class="modal">
       <span class="close">&times;</span>
-      <img class="modal-content" id="modal-img" />
+      <img class="modal-content" style="display: none" />
+      <video class="modal-content" controls style="display: none"></video>
       <a class="prev">&#10094;</a>
       <a class="next">&#10095;</a>
     </div>
 
     <!-- Modal für Unterkunfts-Galerie -->
     <div id="accommodationModal" class="modal">
-      <span class="closeAccom">&times;</span>
-      <img class="modal-content" id="modal-accom-img" />
-      <a class="prevAccom">&#10094;</a>
-      <a class="nextAccom">&#10095;</a>
+      <span class="close">&times;</span>
+      <img class="modal-content" style="display: none" />
+      <video class="modal-content" controls style="display: none"></video>
+      <a class="prev">&#10094;</a>
+      <a class="next">&#10095;</a>
+    </div>
+
+    <!-- Ayahuasca-Galerie -->
+    <div id="ayahuascaModal" class="modal">
+      <span class="close">&times;</span>
+      <img class="modal-content" style="display: none" />
+      <video class="modal-content" controls style="display: none"></video>
+      <a class="prev">&#10094;</a>
+      <a class="next">&#10095;</a>
     </div>
 
     <footer>
