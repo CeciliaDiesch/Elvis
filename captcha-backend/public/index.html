@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dschungel Touren mit Elvis - Erlebe den Amazonas</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Monkey Sprite -->
+    <img id="monkey" alt="kletternder Affe" style="position: absolute; width: 100px; top: 0; left: 0; pointer-events: none; z-index: 9999" />
+
+    <!-- Parallax Header mit Hintergrundbild (Drohnenaufnahme des Amazonas) -->
+    <header id="header">
+      <div class="header-flags">
+        <img src="assets/icons/gb.svg" alt="English" onclick="switchLanguage('en')" />
+        <img src="assets/icons/es.svg" alt="Español" onclick="switchLanguage('es')" />
+      </div>
+      <button class="nav-toggle" aria-label="Menu öffnen">&#9776;</button>
+
+      <div class="parallax-bg"></div>
+      <div class="header-content">
+        <!-- <h1>Ayahuasca und Dschungel Touren</h1>
+        <p>Erlebe den authentischen Amazonas aus erster Hand</p> -->
+        <!-- <h1>Peru Jungle Experience</h1>
+        <p>Rainforest tours with or without Ayahuasca</p> -->
+        <h1>Jungle Tour with Elvis</h1>
+        <p>Rainforest exploration with or without Ayahuasca</p>
+      </div>
+      <nav>
+        <ul class="nav-links">
+          <!-- <div class="nav-headers"> -->
+          <li><a href="#ueber">Über Elvis</a></li>
+          <li><a href="#touren">Touren</a></li>
+          <li><a href="#uebernachtung">Übernachtung</a></li>
+          <li><a href="#ayahuasca">Ayahuasca</a></li>
+          <li><a href="#galerie">Galerie</a></li>
+          <li><a href="#Guests">Guests</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+          <!-- </div> -->
+          <!-- Language Switcher als letztes List-Item -->
+          <li class="language-switcher">
+            <img src="assets/icons/gb.svg" alt="English" onclick="switchLanguage('en')" />
+            <img src="assets/icons/es.svg" alt="Español" onclick="switchLanguage('es')" />
+            <!-- <img src="assets/icons/de.svg" alt="Deutsch" onclick="switchLanguage('de')" /> -->
+          </li>
+        </ul>
+      </nav>
+      <img id="sound-toggle" src="assets/icons/nosound.png" alt="Sound aus" class="sound-icon" />
+    </header>
+
+    <main>
+      <!-- Über Elvis -->
+      <section id="ueber">
+        <h2>Über Elvis</h2>
+        <div class="content-flex">
+          <img src="assets/images/Profil.jpeg" alt="Elvis, der Schamane" class="profile-img" />
+          <div class="text">
+            <p>
+              Elvis ist in Pucallpa groß geworden, wurde von seinem Großvater aufgezogen, da sein Vater im Bürgerkrieg starb und seine Mutter ?. Sein Großvater – ein erfahrener Schamane – begann ihn
+              bereits im Alter von 16 Jahren auszubilden. Seit seinem 18. Lebensjahr reiste viel entlang des Amazonas und sammelt wertvolle Erfahrungen im Dschungel. Seit über 25 Jahren praktiziert er
+              Ayahuasca-Medizin und leitet Rituale für Einheimische und Besucher – hin und wieder reist er dafür auch ins Ausland. Seit .. lebt er mit seiner Partnerin Mathilde, und ihren 7 Kindern in
+              der Community ... 100km flussaufwärts von Iquitos und setzt sich für die community ein.
+            </p>
+            <!-- <p>Sein umfangreiches Wissen als Schamane und seine positive Ausstrahlung haben ihn zu einer hochgeschätzten Persönlichkeit entlang des Amazonas gemacht.</p> -->
+          </div>
+        </div>
+      </section>
+      <!-- 
+      Elvis ist in Pucallpa groß geworden, wurde von seinem Großvater aufgezogen, da sein Vater im Bürgerkrieg starb und seine Mutter an einer Krankheit verstarb. Sein Großvater – ein erfahrener Schamane – begann ihn bereits im Alter von 16 Jahren auszubilden.
+
+Seit seinem 18. Lebensjahr reist er entlang des Amazonas und sammelt wertvolle Erfahrungen im Dschungel. Vor drei Jahren traf er Mathilde, die er aus Kindheitstagen kannte. Seit zwei Jahren lebt er nun mit ihr und ihren sieben Kindern in einem Dorf nahe Nauta, baut gerade ein neues Haus und begleitet Besucher als Schamane auf spannenden Dschungeltouren.
+-->
+
+      <!-- Touren 🌿 🌌 🐸 -->
+      <section id="touren">
+        <h2>Touren</h2>
+
+        <details open class="tour-subsection">
+          <summary><span>Dschungeltouren</span></summary>
+          <p>
+            Erlebe unvergessliche Dschungeltouren, die flexibel viele Tage dauern können und ganz nach deinen Wünschen gestaltet werden. Elvis’ Partnerin Mathilde sorgt vor Ort für traditionelle
+            Speisen und authentische Verpflegung. Besonders beliebt sind Touren mit 6 oder 7 Tagen, um tief in die vielfältige Tier- und Pflanzenwelt des Amazonas einzutauchen.
+          </p>
+          <p>Je nach Tourdauer und eingeschlossenen Leistungen liegen die Preise am Ende zwischen <strong>90 und 110 US-Dollar pro Tag</strong>.</p>
+
+          <p>Startpunkte der Touren: <strong>Pucallpa</strong> oder <strong>Iquitos</strong>.</p>
+          <p>
+            <strong>Wichtig:</strong> Die Kosten für An- und Abreise zur Lodge sind nicht im Preis enthalten. Elvis kennt die lokalen Anbieter und organisiert für dich günstige Transporte: Von Iquitos
+            fährt man etwa zwei Stunden im Sammeltaxi (ca. <strong>4 US-Dollar</strong>) nach Nauta, anschließend geht es rund drei Stunden mit dem Boot weiter in die Wildnis (ca.
+            <strong>50 US-Dollar</strong>), wobei der Großteil auf Benzinkosten entfällt.
+          </p>
+        </details>
+
+        <details class="tour-subsection">
+          <summary><span> Ayahuasca-Zeremonien</span></summary>
+          <p>Die Anzahl der Ayahuasca-Zeremonien kann man frei wählen.</p>
+          <p>
+            Sie finden immer am Abend statt. Der Ayahuasca Sud wird einen Tag lang gemeinsam gekocht. Da eine Zeremonie eine vorbereitende Diät von etwa drei Tagen erfordert – bei der auf Öl, Zucker,
+            Salz, Alkohol, Koffein, Sex und andere Drogen verzichtet werden sollte – wird beim Kochen vor Ort entsprechend Rücksicht genommen. Die Diät kann z. B. ab dem zweiten Tag begonnen werden,
+            sodass am 4., 5. und 6. Abend jeweils eine Zeremonie stattfinden kann. Alternativ kann die Diät auch schon vor der Anreise durchgeführt werden, um die Zeremonien mit je einem Ruhetag
+            dazwischen zu planen oder vor einem Kurzaufenthalt.
+          </p>
+          <p>Tagsüber ist Zeit für Wanderungen durch den Dschungel, zur Beobachtung von Tieren, zum Kennenlernen traditioneller Pflanzen – oder zum Ausruhen in einer Hängematte.</p>
+          <p>Bei einer 6 oder 7 Tages Tour lassen sich 2 bis 3 Zeremonien gut integrieren.</p>
+          <p>Die Kosten liegen pro Person bei <strong>110 US Dollar pro Zeremonie</strong>.</p>
+        </details>
+
+        <details class="tour-subsection">
+          <summary><span> Kambo-Ritual</span></summary>
+          <p>
+            Kambo ist ein traditionelles schamanisches Reinigungsritual mit dem Sekret eines in der Region lebenden Dschungelfroschs (<em>Phyllomedusa bicolor</em>). Das Gift wird in winzigen Mengen
+            auf kleine, angeritzte Hautstellen aufgetragen. Es gilt als kraftvolle Reinigung auf körperlicher, energetischer und geistiger Ebene.
+          </p>
+          <p>
+            Die Wirkung ist intensiv und setzt rasch ein. Ziel ist es, Blockaden zu lösen und das Immunsystem zu stärken. Das Kambo-Ritual wird auf Wunsch vor Ort für
+            <strong>40 US Dollar</strong> durchgeführt.
+          </p>
+        </details>
+      </section>
+
+      <!--       <section id="touren">
+        <h2>Touren</h2>
+        <p>
+          Erlebe unvergessliche Dschungeltouren, die beliebig viele Tage dauern können. Die Kosten liegen je nach Tour zwischen <strong>90 und 110 US Dollar pro Tag</strong>, abhängig von Aktivitäten,
+          Equipment, Lodge, Benzin und weiteren Faktoren.
+        </p>
+        <p>
+          Die Anzahl der Tage ist flexibel und richtet sich ganz nach deiner zeitlichen Verfügbarkeit. Beliebt sind Touren mit 6 oder 7 Tagen tief im Dschungel. Falls Interesse an einer
+          Ayahuasca-Zeremonie besteht, lassen sich auch 2 bis 3 Zeremonien in die Reise integrieren.
+        </p>
+        <p>
+          Da eine Zeremonie eine vorbereitende Diät von etwa drei Tagen erfordert – bei der auf Öl, Zucker, Salz, Alkohol, Koffein, Sex und andere Drogen verzichtet werden sollte – achten wir beim
+          Kochen vor Ort selbstverständlich darauf. Die Diät kann z. B. ab dem zweiten Tag begonnen werden, sodass am 4., 5. und 6. Abend jeweils eine Zeremonie stattfinden kann. Alternativ kannst du
+          auch bereits vor deiner Anreise mit der Diät beginnen und die Zeremonien mit je einem Ruhetag dazwischen abhalten.
+        </p>
+        <p>
+          Tagsüber kannst du entweder durch den Dschungel wandern, Tiere beobachten, traditionelle Pflanzen kennenlernen – oder einfach in der Hängematte entspannen. An den freien Tagen gibt es
+          außerdem die Möglichkeit, <strong>Kambo</strong> zu machen.
+        </p>
+        <p>
+          Kambo ist ein traditionelles schamanisches Reinigungsritual mit dem Gift eines in der Region lebenden Dschungelfroschs (<em>Phyllomedusa bicolor</em>). Es wird auf winzige Hautöffnungen
+          aufgetragen und soll Körper, Geist und Energiesystem reinigen. Die Zeremonie wird vor Ort für <strong>40 US Dollar</strong> angeboten.
+        </p>
+        <p>
+          <strong>Wichtig:</strong> Die Kosten für An- und Abreise zur Lodge sind nicht im Preis inbegriffen. Die Organisation übernimmt Elvis jedoch gern. Er kennt die lokalen Anbieter und kann
+          dadurch deutlich günstigere Transporte arrangieren. Von Iquitos aus fährt man ca. 2 Stunden mit dem Sammeltaxi für etwa <strong>4 US Dollar</strong> nach Nauta. Von dort geht es dann etwa 3
+          Stunden mit dem Boot weiter in die Wildnis – für rund <strong>50 US Dollar</strong>, wovon der Großteil die Benzinkosten sind.
+        </p>
+        <p>Startpunkte der Touren: <strong>Pucallpa</strong> oder <strong>Iquitos</strong>.</p>
+      </section>' -->
+
+      <!-- Übernachtung (mit eigener Galerie und Modal) -->
+      <section id="uebernachtung" class="uebernachtung">
+        <h2>Übernachtung</h2>
+        <p>
+          Genieße authentische Übernachtungsmöglichkeiten mitten im Dschungel – perfekt, um die nächtliche Magie des Amazonas zu erleben. Jedes Zimmer verfügt über ein eigenes Bad mit Dusche. Für das
+          Aufladen von Geräten und zum Kochen steht täglich für einige Stunden Strom zur Verfügung. Die Unterkünfte sind allesamt etwas erhöht gebaut, da in der Regenzeit das Wasser stark ansteigen
+          kann. Die Gebäude sind regen- und moskitosicher und nur mit dem Boot erreichbar. Wer mag, kann direkt vor der Lodge schwimmen – und mit etwas Geduld lassen sich sogar die Delfine direkt vor
+          der Haustür blicken. Serviert wird traditionelles Essen. Manchmal gibt es auch geröstete Macambo-Kerne, wenn man die Früchte auf einer Dschungelwanderung findet und mit zurückbringt.
+          Vegetarische Kost ist auf Anfrage möglich, und auch andere besondere Wünsche bezüglich der Verpflegung werden im Rahmen der örtlichen Möglichkeiten gern berücksichtigt.
+        </p>
+        <div class="accommodation-gallery">
+          <figure class="figure-portrait">
+            <img class="figure-portrait" src="assets/images/unterkunft/Unterkunft.jpeg" alt="Gemütliche Hütte im Dschungel" />
+            <figcaption>Gemütliche Hütte</figcaption>
+          </figure>
+          <figure class="figure-landscape">
+            <img class="figure-landscape" src="assets/images/unterkunft/Unterkunft 6.jpeg" alt="Komfortable Lodge" />
+            <figcaption>Zimmer mit Bad und Dusche</figcaption>
+          </figure>
+          <figure class="figure-landscape">
+            <img class="figure-landscape" src="assets/images/unterkunft/Unterkunft 3.jpeg" alt="Komfortable Lodge" />
+            <figcaption>Blick aus der Lodge.</figcaption>
+          </figure>
+          <!-- <figure class="figure-landscape">
+            <img class="figure-landscape" src="assets/images/unterkunft/Elvis (15).jpeg" alt="Komfortable Lodge" />
+            <figcaption>Traditionelles Essen</figcaption>
+          </figure> -->
+          <figure class="figure-portrait">
+            <img class="figure-portrait" src="assets/images/unterkunft/Unterkunft 1.jpeg" alt="Traditionelle Unterkunft" />
+            <figcaption>Frisch geröstete Macambo Kerne</figcaption>
+          </figure>
+          <!-- <figure class="figure-landscape">
+            <img class="figure-landscape" src="assets/images/unterkunft/Food.png" alt="Traditionelle Unterkunft" />
+            <figcaption>Traditionelles Essen, manchmal auch geröstete Macambo Kerne aus der Macambo Frucht, wenn man sie mit von der Djungelwanderung zurück schleppt</figcaption>
+          </figure> -->
+          <!-- <figure class="figure-portrait">
+            <img class="figure-portrait" src="assets/images/unterkunft/Unterkunft 5.jpeg" alt="Traditionelle Unterkunft" />
+            <figcaption>Hängematten zum Entspannen</figcaption>
+          </figure> -->
+          <!-- <figure class="figure-portrait">
+            <video class="figure-portrait" muted controls>
+              <source src="assets/images/unterkunft/Unterkunft.mp4" type="video/mp4" />
+              Dein Browser unterstützt dieses Videoformat nicht.
+            </video>
+            <figcaption>Alles ist etwas höher gebaut, da hier in der Regenzeit auch das Wasser sehr hoch steigen kann</figcaption>
+          </figure> -->
+        </div>
+        <p style="margin-top: 20px; color: grey">*Die Unterkünfte variieren je nach Verfügbarkeit.</p>
+      </section>
+
+      <!-- Ayahuasca -->
+      <section id="ayahuasca">
+        <h2>Ayahuasca</h2>
+        <div class="text">
+          <p>
+            Ayahuasca ist ein traditionelles südamerikanisches Pflanzengebräu aus der Ranke Banisteriopsis caapi und den Blättern der Chacruna (Psychotria viridis). Sie wird seit Jahrhunderten von
+            indigenen Schamanen genutzt, um in gemeinschaftlichen Zeremonien in veränderte Bewusstseinszustände einzutreten, spirituelle Heilung zu erfahren und tiefe Einsichten ins eigene Innere zu
+            gewinnen.
+          </p>
+          <p>
+            Die Zeremonie findet üblicherweise nachts statt, geleitet von einem erfahrenen Schamanen. Nach einer Phase der Einstimmung und Reinigung wird der Ayahuasca‐Trunk in kleinen Schlucken
+            gereicht. Es folgt eine 4–6 stündige Reise, begleitet von traditionellen Ikaros (Heilgesängen), in der körperliche, emotionale und spirituelle Blockaden gelöst werden können.
+          </p>
+          <p>
+            Man kocht den Ayahuasca‐Trunk zusammen. Dies dauert einen ganzen Tag lang. Die Vorbereitung beginnt schon früh morgens, vor dem Sonnenaufgang, mit dem Sammeln der Zusatzzutaten, falls es
+            Bedarf gibt.
+          </p>
+        </div>
+
+        <!-- Ayahuasca‑Galerie -->
+        <div class="ayahuasca-gallery">
+          <figure class="figure-portrait">
+            <img class="figure-portrait" src="assets/images/Ayahuasca/Aya1.jpeg" alt="Schamane bereitet Ayahuasca vor" />
+            <figcaption>Vorbereitung der Ayahuasca Pflanze</figcaption>
+          </figure>
+          <figure class="figure-portrait">
+            <img class="figure-portrait" src="assets/images/Ayahuasca/Ayahuasca.jpg" alt="Teilnehmer in der Zeremonie" />
+            <figcaption>Vorbereitung der Ayahuasca Pflanze</figcaption>
+          </figure>
+          <!-- <figure class="figure-portrait">
+            <img class="figure-portrait" src="assets/images/Ayahuasca/Aya 2.jpg" alt="Gemeinsames Gebet um Heilung" />
+            <figcaption>Mehrmaliges Auskochen</figcaption>
+          </figure> -->
+          <figure class="figure-landscape">
+            <video class="figure-landscape" controls>
+              <source src="assets/images/Ayahuasca/Ayahuasca6.mp4" type="video/mp4" />
+            </video>
+            <figcaption>Der Ayahuasca Sud</figcaption>
+          </figure>
+          <figure class="figure-landscape">
+            <img class="figure-landscape" src="assets/images/Ayahuasca/Ayahuasca4.jpg" alt="Ritualgegenstände und Blumen" />
+            <figcaption>Ritualgegenstände</figcaption>
+          </figure>
+          <figure class="figure-landscape">
+            <img class="figure-landscape" src="assets/images/Ayahuasca/Zeremonie (2).jpeg" alt="Ritualgegenstände und Blumen" />
+            <figcaption>Ort der Zeremonie</figcaption>
+          </figure>
+          <figure class="figure-portrait">
+            <video class="figure-portrait" controls>
+              <source src="assets/images/Ayahuasca/Ayahuasca5.mp4" type="video/mp4" />
+            </video>
+            <figcaption>Heilgesänge (Ikaros)</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!--Gesamt Galerie-->
+      <section id="galerie">
+        <h2>Galerie</h2>
+        <div class="gallery">
+          <!-- 1) Erste Querformat-Image-Paarung -->
+          <div class="landscape-pair">
+            <figure>
+              <img src="assets/images/Galerie/Galerie (0).jpeg" alt="Landschaft 1" />
+            </figure>
+            <figure>
+              <img src="assets/images/Galerie/Galerie (1).jpeg" alt="Landschaft 2" />
+            </figure>
+          </div>
+
+          <!-- 2) Zweites Querformat-Video-Paar -->
+          <div class="landscape-pair">
+            <figure>
+              <video muted controls>
+                <source src="assets/images/Galerie/Galerie (3)1.mp4" type="video/mp4" />
+              </video>
+            </figure>
+            <figure>
+              <video muted controls>
+                <source src="assets/images/Galerie/Galerie (2)3.mp4" type="video/mp4" />
+              </video>
+            </figure>
+          </div>
+
+          <figure class="portrait-item">
+            <img src="assets/images/Galerie/Galerie (4).jpeg" alt="Landschaft 2" />
+          </figure>
+
+          <!-- 4) Erstes Querformat-Video-Image-Paar -->
+          <div class="landscape-pair">
+            <figure>
+              <video muted controls>
+                <source src="assets/images/Galerie/Galerie (4).mp4" type="video/mp4" />
+              </video>
+            </figure>
+            <figure>
+              <img src="assets/images/Galerie/Galerie (5).jpeg" alt="Landschaft 2" />
+            </figure>
+          </div>
+
+          <!-- 3) Hochkant-Video einzeln -->
+          <!-- <figure class="portrait-item">
+            <video muted controls>
+              <source src="assets/images/Galerie/Galerie (5).mp4" type="video/mp4" />
+              Dein Browser unterstützt dieses Videoformat nicht.
+            </video>
+          </figure> -->
+
+          <figure class="portrait-item">
+            <img src="assets/images/Galerie/Galerie (6).jpeg" alt="Landschaft 2" />
+          </figure>
+
+          <figure class="portrait-item">
+            <img src="assets/images/Galerie/Galerie (7).jpeg" alt="Landschaft 2" />
+          </figure>
+
+          <figure class="portrait-item">
+            <img src="assets/images/Galerie/Galerie (8).jpeg" alt="Landschaft 2" />
+          </figure>
+
+          <figure class="portrait-item">
+            <img src="assets/images/Galerie/Galerie (9).jpeg" alt="Landschaft 2" />
+          </figure>
+
+          <div class="landscape-pair">
+            <figure>
+              <img src="assets/images/Galerie/Galerie (10).jpeg" alt="Landschaft 1" />
+            </figure>
+            <figure>
+              <img src="assets/images/Galerie/Galerie (11).jpeg" alt="Landschaft 2" />
+            </figure>
+          </div>
+
+          <figure class="portrait-item">
+            <img src="assets/images/Galerie/Galerie (12).jpeg" alt="Landschaft 2" />
+          </figure>
+          <div class="landscape-pair">
+            <figure>
+              <img src="assets/images/Galerie/Galerie (13).jpeg" alt="Landschaft 1" />
+            </figure>
+            <figure>
+              <img src="assets/images/Galerie/Galerie (14).jpeg" alt="Landschaft 2" />
+            </figure>
+          </div>
+
+          <figure class="portrait-item">
+            <img src="assets/images/Galerie/Galerie (15).jpg" alt="Landschaft 2" />
+          </figure>
+        </div>
+      </section>
+      <!-- Guests -->
+      <section id="rezensionen">
+        <h2>Guests</h2>
+        <div class="reviews-container">
+          <button class="review-nav prev-review" aria-label="Zurück">&#10094;</button>
+          <div class="reviews-carousel">
+            <article class="review hover-img">
+              <p>
+                "Ich bin vor ein paar Tagen aus der selva in der Nähe von Iquitos zurück nach Lima gekommen. Habe Elvis dort getroffen. Was für ein schöner Mensch und Ort - nach wie vor geht mein
+                ganzes Herz auf, wenn ich an meine Zeit im Dschungel denke."
+              </p>
+              <p class="reviewer">- Anna S.</p>
+              <p class="review-date">MAi 2023</p>
+            </article>
+            <article class="review hover-img">
+              <p>"Ein unvergessliches Abenteuer im Herzen des Amazonas!"</p>
+              <img style="width: 80%" src="assets/images/Rezensionen/Kalle.jpeg" alt="Kalle" class="review-image" />
+              <p class="reviewer">- Kalle W.</p>
+              <p class="review-date">März 2023</p>
+            </article>
+            <article class="review hover-img">
+              <p>
+                "Elvis ist nicht nur ein exzellenter Schamane, sondern auch ein wunderbarer Gastgeber. Seine Begeisterung den Djungel zu erkunden steckt sofort an. Der Moment bestimmt den Weg. Es ist
+                wundervoll in diese andere Welt abtauchen zu dürfen."
+              </p>
+              <img style="width: 80%" src="assets/images/Rezensionen/CaroCeci.jpeg" alt="CaroCecilia" class="review-image" />
+              <p class="reviewer">- Carolin D. und Cecilia D.</p>
+              <p class="review-date">März 2025</p>
+            </article>
+            <article class="review hover-img">
+              <p>"Die Tour bot uns tiefe Einblicke in das Leben im Dschungel und die Naturverbundenheit des Amazonas."</p>
+              <p class="reviewer">- Annabell K.</p>
+              <p class="review-date">September 2024</p>
+            </article>
+          </div>
+          <button class="review-nav next-review" aria-label="Weiter">&#10095;</button>
+        </div>
+      </section>
+
+      <!-- Kontakt -->
+      <section id="kontakt">
+        <h2>Kontakt</h2>
+        <p>Für Verfügbarkeitsanfragen und weitere Informationen kontaktiere Sie Elvis auf englisch oder spanisch über WhatsApp:</p>
+        <form id="contact-form" action="/send-whatsapp" method="POST">
+          <!-- Honeypot-Feld (unsichtbar für echte Nutzer) -->
+          <input type="text" name="website" class="hp-field" autocomplete="off" />
+
+          <!-- reines Captcha-Bild -->
+          <label for="captcha">Bitte gib den Text aus dem Bild ein:</label><br />
+          <img src="/captcha.png" alt="CAPTCHA" /><br />
+          <input type="text" name="captcha" id="captcha" required />
+
+          <button type="submit" class="whatsapp-button">WhatsApp Kontakt</button>
+        </form>
+      </section>
+      <!--  <a href="https://wa.me/1234567890" target="_blank" class="whatsapp-button">WhatsApp Kontakt</a> -->
+    </main>
+
+    <!-- Modal für allgemeine Galerie -->
+    <div id="modal" class="modal">
+      <span class="close">&times;</span>
+      <img class="modal-content" style="display: none" />
+      <video class="modal-content" controls style="display: none"></video>
+      <a class="prev">&#10094;</a>
+      <a class="next">&#10095;</a>
+    </div>
+
+    <!-- Modal für Unterkunfts-Galerie -->
+    <div id="accommodationModal" class="modal">
+      <span class="close">&times;</span>
+      <img class="modal-content" style="display: none" />
+      <video class="modal-content" controls style="display: none"></video>
+      <a class="prev">&#10094;</a>
+      <a class="next">&#10095;</a>
+    </div>
+
+    <!-- Ayahuasca-Galerie -->
+    <div id="ayahuascaModal" class="modal">
+      <span class="close">&times;</span>
+      <img class="modal-content" style="display: none" />
+      <video class="modal-content" controls style="display: none"></video>
+      <a class="prev">&#10094;</a>
+      <a class="next">&#10095;</a>
+    </div>
+
+    <footer>
+      <p>&copy; 2025 Dschungel Touren mit Elvis - Alle Rechte vorbehalten</p>
+    </footer>
+
+    <!-- Hintergrund-Ambient Sound (selbst erstellt) -->
+    <audio id="ambient-sound" loop>
+      <source src="assets/sounds/background.mp3" type="audio/mp3" />
+      Dein Browser unterstützt dieses Audioformat nicht.
+    </audio>
+    <!-- Klick-Sound -->
+    <audio id="click-sound">
+      <source src="audio/click.mp3" type="audio/mp3" />
+      Dein Browser unterstützt dieses Audioformat nicht.
+    </audio>
+
+    <script src="script.js"></script>
+  </body>
+</html>

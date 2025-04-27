@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jungle Tours with Elvis - Experience the Amazon</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Monkey Sprite -->
+    <img id="monkey" alt="climbing monkey" style="position: absolute; width: 100px; top: 0; left: 0; pointer-events: none; z-index: 9999" />
+
+    <!-- Parallax Header with Background Image (Drone Shot of the Amazon) -->
+    <header id="header">
+      <div class="header-flags">
+        <img src="assets/icons/gb.svg" alt="English" onclick="switchLanguage('en')" />
+        <img src="assets/icons/es.svg" alt="Español" onclick="switchLanguage('es')" />
+      </div>
+      <button class="nav-toggle" aria-label="Open menu">&#9776;</button>
+
+      <div class="parallax-bg"></div>
+      <div class="header-content">
+        <h1>Jungle Tour with Elvis</h1>
+        <p>Rainforest exploration with or without Ayahuasca</p>
+      </div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#ueber">About Elvis</a></li>
+          <li><a href="#touren">Tours</a></li>
+          <li><a href="#uebernachtung">Accommodation</a></li>
+          <li><a href="#ayahuasca">Ayahuasca</a></li>
+          <li><a href="#galerie">Gallery</a></li>
+          <li><a href="#Guests">Guests</a></li>
+          <li><a href="#kontakt">Contact</a></li>
+          <li class="language-switcher">
+            <img src="assets/icons/gb.svg" alt="English" onclick="switchLanguage('en')" />
+            <img src="assets/icons/es.svg" alt="Español" onclick="switchLanguage('es')" />
+          </li>
+        </ul>
+      </nav>
+      <img id="sound-toggle" src="assets/icons/nosound.png" alt="Sound off" class="sound-icon" />
+    </header>
+
+    <main>
+      <!-- About Elvis -->
+      <section id="ueber">
+        <h2>About Elvis</h2>
+        <div class="content-flex">
+          <img src="assets/images/Profil.jpeg" alt="Elvis, the shaman" class="profile-img" />
+          <div class="text">
+            <p>
+              Elvis grew up in Pucallpa, raised by his grandfather after his father died in the civil war and his mother disappeared. His grandfather—an experienced shaman—began training him at age
+              16. Since his 18th birthday, he has traveled extensively along the Amazon, gathering valuable jungle experience. For over 25 years, he has practiced Ayahuasca medicine and led rituals
+              for locals and visitors—occasionally traveling abroad for this purpose. Since .., he has lived with his partner Mathilde and their seven children in the community ... 100 km upriver from
+              Iquitos, working to support the local community.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tours 🌿 🌌 🐸 -->
+      <section id="touren">
+        <h2>Tours</h2>
+
+        <details open class="tour-subsection">
+          <summary><span>Jungle Tours</span></summary>
+          <p>
+            Experience unforgettable jungle tours that can be tailored to last as many days as you wish. Elvis’s partner Mathilde provides traditional meals and authentic catering on-site. Tours of 6
+            or 7 days are particularly popular for fully immersing yourself in the diverse flora and fauna of the Amazon.
+          </p>
+          <p>Depending on the length of the tour and included services, prices range from <strong>90 to 110 USD per day</strong>.</p>
+          <p>Starting points: <strong>Pucallpa</strong> or <strong>Iquitos</strong>.</p>
+          <p>
+            <strong>Important:</strong> Travel to and from the lodge is not included. Elvis works with local providers to arrange affordable transportation: from Iquitos, a shared taxi to Nauta takes
+            about two hours (approx. <strong>4 USD</strong>), then a boat ride of around three hours into the jungle (approx. <strong>50 USD</strong>), most of which covers fuel costs.
+          </p>
+        </details>
+
+        <details class="tour-subsection">
+          <summary><span>Ayahuasca Ceremonies</span></summary>
+          <p>You can choose as many Ayahuasca ceremonies as you like. Each ceremony takes place in the evening after the brew has been prepared together over the course of a full day.</p>
+          <p>
+            A preparatory diet of about three days—avoiding oil, sugar, salt, alcohol, caffeine, sex, and other substances—is recommended. The diet can start on-site (e.g. beginning on day two, with
+            ceremonies on the 4th, 5th, and 6th evenings) or before arrival to space ceremonies with rest days in between.
+          </p>
+          <p>During daylight hours, there is time for jungle hikes, wildlife observation, learning about traditional plants, or relaxing in a hammock.</p>
+          <p>On a 6- or 7-day tour, you can comfortably integrate two to three ceremonies. Prices are <strong>110 USD per ceremony</strong> per person.</p>
+        </details>
+
+        <details class="tour-subsection">
+          <summary><span>Kambo Ritual</span></summary>
+          <p>
+            Kambo is a traditional shamanic cleansing ritual using the secretion of a local rainforest frog (<em>Phyllomedusa bicolor</em>). The toxin is applied in tiny amounts to small,
+            superficially scarified spots on the skin. It is regarded as a powerful purification on physical, energetic, and spiritual levels.
+          </p>
+          <p>
+            The effect is intense and sets in quickly. The aim is to release blockages and strengthen the immune system. The Kambo ritual is offered on-site upon request for <strong>USD 40</strong>.
+          </p>
+        </details>
+      </section>
+
+      <!-- Accommodation (with its own gallery and modal) -->
+      <section id="uebernachtung" class="uebernachtung">
+        <h2>Accommodation</h2>
+        <p>
+          Enjoy authentic overnight accommodations in the heart of the jungle—perfect for experiencing the nighttime magic of the Amazon. Each room has its own bathroom with a shower. Electricity is
+          available for a few hours each day for charging devices and cooking. The accommodations are all built slightly elevated, as water levels can rise significantly in the rainy season. The
+          buildings are rain- and mosquito-proof and accessible only by boat. If you like, you can swim right in front of the lodge—and with some patience, you may even spot dolphins at your doorstep.
+          Traditional meals are served. Sometimes roasted macambo seeds are offered if you find the fruit on a jungle walk and bring them back. Vegetarian options are available upon request, and other
+          special dietary needs can be accommodated within local possibilities.
+        </p>
+        <div class="accommodation-gallery">
+          <figure class="figure-portrait">
+            <img class="figure-portrait" src="assets/images/unterkunft/Unterkunft.jpeg" alt="Cozy hut in the jungle" />
+            <figcaption>Cozy hut</figcaption>
+          </figure>
+          <figure class="figure-landscape">
+            <img class="figure-landscape" src="assets/images/unterkunft/Unterkunft 6.jpeg" alt="Comfortable lodge" />
+            <figcaption>Room with bathroom and shower</figcaption>
+          </figure>
+          <figure class="figure-landscape">
+            <img class="figure-landscape" src="assets/images/unterkunft/Unterkunft 3.jpeg" alt="Comfortable lodge" />
+            <figcaption>View from the lodge</figcaption>
+          </figure>
+          <figure class="figure-portrait">
+            <img class="figure-portrait" src="assets/images/unterkunft/Unterkunft 1.jpeg" alt="Traditional accommodation" />
+            <figcaption>Freshly roasted macambo seeds</figcaption>
+          </figure>
+        </div>
+        <p style="margin-top: 20px; color: grey">*Accommodations vary depending on availability.</p>
+      </section>
+
+      <!-- Ayahuasca -->
+      <section id="ayahuasca">
+        <h2>Ayahuasca</h2>
+        <div class="text">
+          <p>
+            Ayahuasca is a traditional South American plant brew made from the vine Banisteriopsis caapi and the leaves of chacruna (<em>Psychotria viridis</em>). It has been used for centuries by
+            indigenous shamans in communal ceremonies to enter altered states of consciousness, experience spiritual healing, and gain deep insights into the inner self.
+          </p>
+          <p>
+            The ceremony usually takes place at night, led by an experienced shaman. After a period of preparation and cleansing, the Ayahuasca brew is served in small sips. This is followed by a
+            4–6-hour journey accompanied by traditional icaros (healing songs), during which physical, emotional, and spiritual blockages may be released.
+          </p>
+          <p>The Ayahuasca brew is cooked together. This takes a whole day. Preparation begins early in the morning, before sunrise, with gathering any additional ingredients if needed.</p>
+        </div>
+
+        <!-- Ayahuasca Gallery -->
+        <div class="ayahuasca-gallery">
+          <figure class="figure-portrait">
+            <img class="figure-portrait" src="assets/images/Ayahuasca/Aya1.jpeg" alt="Shaman preparing Ayahuasca" />
+            <figcaption>Ayahuasca plant preparation</figcaption>
+          </figure>
+          <figure class="figure-portrait">
+            <img class="figure-portrait" src="assets/images/Ayahuasca/Ayahuasca.jpg" alt="Participant in ceremony" />
+            <figcaption>Ayahuasca plant preparation</figcaption>
+          </figure>
+          <figure class="figure-landscape">
+            <video class="figure-landscape" controls>
+              <source src="assets/images/Ayahuasca/Ayahuasca6.mp4" type="video/mp4" />
+            </video>
+            <figcaption>The Ayahuasca brew</figcaption>
+          </figure>
+          <figure class="figure-landscape">
+            <img class="figure-landscape" src="assets/images/Ayahuasca/Ayahuasca4.jpg" alt="Ritual items and flowers" />
+            <figcaption>Ritual items</figcaption>
+          </figure>
+          <figure class="figure-landscape">
+            <img class="figure-landscape" src="assets/images/Ayahuasca/Zeremonie (2).jpeg" alt="Ceremony site" />
+            <figcaption>Ceremony site</figcaption>
+          </figure>
+          <figure class="figure-portrait">
+            <video class="figure-portrait" controls>
+              <source src="assets/images/Ayahuasca/Ayahuasca5.mp4" type="video/mp4" />
+            </video>
+            <figcaption>Healing songs (Icaros)</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- Main Gallery -->
+      <section id="galerie">
+        <h2>Gallery</h2>
+        <div class="gallery">
+          <div class="landscape-pair">
+            <figure>
+              <img src="assets/images/Galerie/Galerie (0).jpeg" alt="Landscape 1" />
+            </figure>
+            <figure>
+              <img src="assets/images/Galerie/Galerie (1).jpeg" alt="Landscape 2" />
+            </figure>
+          </div>
+
+          <div class="landscape-pair">
+            <figure>
+              <video muted controls>
+                <source src="assets/images/Galerie/Galerie (3)1.mp4" type="video/mp4" />
+              </video>
+            </figure>
+            <figure>
+              <video muted controls>
+                <source src="assets/images/Galerie/Galerie (2)3.mp4" type="video/mp4" />
+              </video>
+            </figure>
+          </div>
+
+          <figure class="portrait-item">
+            <img src="assets/images/Galerie/Galerie (4).jpeg" alt="Landscape 3" />
+          </figure>
+
+          <div class="landscape-pair">
+            <figure>
+              <video muted controls>
+                <source src="assets/images/Galerie/Galerie (4).mp4" type="video/mp4" />
+              </video>
+            </figure>
+            <figure>
+              <img src="assets/images/Galerie/Galerie (5).jpeg" alt="Landscape 4" />
+            </figure>
+          </div>
+
+          <figure class="portrait-item">
+            <img src="assets/images/Galerie/Galerie (6).jpeg" alt="Landscape 5" />
+          </figure>
+
+          <figure class="portrait-item">
+            <img src="assets/images/Galerie/Galerie (7).jpeg" alt="Landscape 6" />
+          </figure>
+
+          <figure class="portrait-item">
+            <img src="assets/images/Galerie/Galerie (8).jpeg" alt="Landscape 7" />
+          </figure>
+
+          <figure class="portrait-item">
+            <img src="assets/images/Galerie/Galerie (9).jpeg" alt="Landscape 8" />
+          </figure>
+
+          <div class="landscape-pair">
+            <figure>
+              <img src="assets/images/Galerie/Galerie (10).jpeg" alt="Landscape 9" />
+            </figure>
+            <figure>
+              <img src="assets/images/Galerie/Galerie (11).jpeg" alt="Landscape 10" />
+            </figure>
+          </div>
+
+          <figure class="portrait-item">
+            <img src="assets/images/Galerie/Galerie (12).jpeg" alt="Landscape 11" />
+          </figure>
+          <div class="landscape-pair">
+            <figure>
+              <img src="assets/images/Galerie/Galerie (13).jpeg" alt="Landscape 12" />
+            </figure>
+            <figure>
+              <img src="assets/images/Galerie/Galerie (14).jpeg" alt="Landscape 13" />
+            </figure>
+          </div>
+
+          <figure class="portrait-item">
+            <img src="assets/images/Galerie/Galerie (15).jpg" alt="Landscape 14" />
+          </figure>
+        </div>
+      </section>
+
+      <!-- Guests Reviews -->
+      <section id="rezensionen">
+        <h2>Guests</h2>
+        <div class="reviews-container">
+          <button class="review-nav prev-review" aria-label="Previous">&#10094;</button>
+          <div class="reviews-carousel">
+            <article class="review hover-img">
+              <p>
+                "I returned to Lima a few days ago from the selva near Iquitos. I met Elvis there. What a wonderful person and place—my whole heart still opens when I think of my time in the jungle."
+              </p>
+              <p class="reviewer">- Anna S.</p>
+              <p class="review-date">May 2023</p>
+            </article>
+            <article class="review hover-img">
+              <p>"An unforgettable adventure in the heart of the Amazon!"</p>
+              <img style="width: 80%" src="assets/images/Rezensionen/Kalle.jpeg" alt="Kalle" class="review-image" />
+              <p class="reviewer">- Kalle W.</p>
+              <p class="review-date">March 2023</p>
+            </article>
+            <article class="review hover-img">
+              <p>
+                "Elvis is not only an excellent shaman but also a wonderful host. His enthusiasm for exploring the jungle is immediately contagious. The moment guides the path. It is wonderful to be
+                able to dive into this other world."
+              </p>
+              <img style="width: 80%" src="assets/images/Rezensionen/CaroCeci.jpeg" alt="CaroCecilia" class="review-image" />
+              <p class="reviewer">- Carolin D. and Cecilia D.</p>
+              <p class="review-date">March 2025</p>
+            </article>
+            <article class="review hover-img">
+              <p>"The tour gave us deep insights into jungle life and the Amazon's connection to nature."</p>
+              <p class="reviewer">- Annabell K.</p>
+              <p class="review-date">September 2024</p>
+            </article>
+          </div>
+          <button class="review-nav next-review" aria-label="Next">&#10095;</button>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="kontakt">
+        <h2>Contact</h2>
+        <p>For availability inquiries and further information, contact Elvis in English or Spanish via WhatsApp:</p>
+        <form id="contact-form" action="/send-whatsapp" method="POST">
+          <input type="text" name="website" class="hp-field" autocomplete="off" />
+
+          <label for="captcha">Please enter the text from the image:</label><br />
+          <img src="/captcha.png" alt="CAPTCHA" /><br />
+          <input type="text" name="captcha" id="captcha" required />
+
+          <button type="submit" class="whatsapp-button">WhatsApp Contact</button>
+        </form>
+      </section>
+    </main>
+
+    <!-- Modals for image galleries -->
+    <div id="modal" class="modal">
+      <span class="close">&times;</span>
+      <img class="modal-content" style="display: none" />
+      <video class="modal-content" controls style="display: none"></video>
+      <a class="prev">&#10094;</a>
+      <a class="next">&#10095;</a>
+    </div>
+
+    <div id="accommodationModal" class="modal">
+      <span class="close">&times;</span>
+      <img class="modal-content" style="display: none" />
+      <video class="modal-content" controls style="display: none"></video>
+      <a class="prev">&#10094;</a>
+      <a class="next">&#10095;</a>
+    </div>
+
+    <div id="ayahuascaModal" class="modal">
+      <span class="close">&times;</span>
+      <img class="modal-content" style="display: none" />
+      <video class="modal-content" controls style="display: none"></video>
+      <a class="prev">&#10094;</a>
+      <a class="next">&#10095;</a>
+    </div>
+
+    <footer>
+      <p>&copy; 2025 Jungle Tours with Elvis - All rights reserved</p>
+    </footer>
+
+    <!-- Background ambient sound (self-created) -->
+    <audio id="ambient-sound" loop>
+      <source src="assets/sounds/background.mp3" type="audio/mp3" />
+      Your browser does not support this audio format.
+    </audio>
+    <!-- Click sound -->
+    <audio id="click-sound">
+      <source src="audio/click.mp3" type="audio/mp3" />
+      Your browser does not support this audio format.
+    </audio>
+
+    <script src="script.js"></script>
+  </body>
+</html>

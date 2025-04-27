@@ -1,0 +1,1125 @@
+/* Reset & globale Einstellungen */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  line-height: 1.6;
+  background: #fff;
+}
+
+.header-flags {
+  display: none;
+}
+
+/* Header mit Parallax-Hintergrund */
+header {
+  position: relative;
+  overflow: visible;
+  height: 35vh;
+  color: #fff;
+}
+
+/* Navbar unten im Header */
+header nav {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+.parallax-bg {
+  background: url('assets/images/background/background.jpeg') no-repeat center center;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Titel am Fuß des Headers */
+.header-content {
+  position: absolute;
+  bottom: 50px;
+  /* Abstand vom unteren Rand, passe nach Wunsch an */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  padding-top: 0;
+  /* entferne das alte padding */
+  text-align: center;
+}
+
+/* .header-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding-top: 20vh;
+} */
+
+header h1 {
+  font-size: 3em;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  line-height: 56px;
+}
+
+header p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+/* Der language-switcher sitzt ganz rechts */
+nav ul li.language-switcher {
+  position: absolute;
+  right: 1rem;
+  /* Abstand vom rechten Rand */
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 0.5rem;
+  margin: 0;
+}
+
+/* Flaggen-Icons */
+.language-switcher img {
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: transform 0.2s;
+}
+
+.language-switcher img:hover {
+  transform: scale(1.1);
+}
+
+
+/* Sound-Icon */
+.sound-icon {
+  position: absolute;
+  top: 5px;
+  right: 20px;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  z-index: 100;
+  background: transparent !important;
+  border: none;
+}
+
+/* Navigation */
+.nav-toggle {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 1rem;
+  margin-top: 0.5rem;
+  background: transparent;
+  border: none;
+  font-size: 2rem;
+  color: #2c3e50;
+  font-size: 1.8rem;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+nav {
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  position: relative;
+}
+
+/* 
+.nav-headers {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+} */
+
+nav ul li {
+  margin: 0 1rem;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 700;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #7a9c4a;
+}
+
+/* Sections */
+section {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+section h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.5em;
+  color: #2c3e50;
+  position: relative;
+}
+
+section h2::after {
+  content: '';
+  width: 80px;
+  height: 4px;
+  background: #25d366;
+  display: block;
+  margin: 10px auto 0;
+}
+
+/* Flex Layout für "Über Elvis" */
+.content-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-img {
+  max-width: 300px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.content-flex .text {
+  max-width: 600px;
+  font-size: 1.1em;
+}
+
+/* Klarere Gliederung der Tour-Rubriken im Stil der Rezensionen */
+.tour-subsection {
+  margin-bottom: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px 20px;
+  transition: box-shadow 0.3s;
+}
+
+.tour-subsection summary {
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 10px 0;
+  outline: none;
+  list-style: none;
+}
+
+.tour-subsection summary::marker {
+  display: none;
+}
+
+.tour-subsection summary span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tour-subsection summary span::before {
+  content: '▶';
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.tour-subsection[open] summary span::before {
+  transform: rotate(0deg);
+  content: '▼';
+}
+
+.tour-subsection p {
+  margin: 10px 0;
+}
+
+/* Galerie (horizontal scrollen) */
+.gallery {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  padding: 0 0 20px;
+  scroll-snap-type: x mandatory;
+}
+
+.gallery::-webkit-scrollbar {
+  height: 6px;
+}
+
+.gallery::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+.gallery>* {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+}
+
+/* Portrait-Items (hochkant) */
+.portrait-item {
+  width: 250px;
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #f4f4f4;
+}
+
+.portrait-item img,
+.portrait-item video {
+  width: auto;
+  height: 400px;
+  object-fit: contain;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.portrait-item:hover img,
+.portrait-item:hover video {
+  transform: scale(1.02);
+}
+
+/* Querformat-Paar (zwei Elemente gestapelt) */
+.landscape-pair {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  row-gap: 10px;
+  width: 250px;
+  height: 400px;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #f4f4f4;
+}
+
+.landscape-pair figure {
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.landscape-pair img,
+.landscape-pair video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.landscape-pair img:hover,
+.landscape-pair video:hover {
+  transform: scale(1.05);
+}
+
+/* ==============================
+   Unterkunfts- & Ayahuasca-Galerie (responsive & Caption an Image gebunden)
+   ============================== */
+.accommodation-gallery,
+.ayahuasca-gallery {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  margin-top: 20px;
+  padding: 0 0 20px;
+  scroll-snap-type: x mandatory;
+}
+
+.accommodation-gallery::-webkit-scrollbar,
+.ayahuasca-gallery::-webkit-scrollbar {
+  height: 6px;
+}
+
+.accommodation-gallery::-webkit-scrollbar-thumb,
+.ayahuasca-gallery::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+/* Jeder Figure shrinkt auf Content-Breite (das Bild) */
+.accommodation-gallery>figure,
+.ayahuasca-gallery>figure {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  display: inline-block;
+  text-align: center;
+  background: #f4f4f4;
+  border-radius: 10px;
+  overflow: hidden;
+  height: auto;
+}
+
+/* Optional: feste Breiten wie zuvor */
+.figure-landscape {
+  width: 350px;
+}
+
+.figure-portrait {
+  width: 175px;
+}
+
+/* Bild / Video: feste Höhe, Breite proportional */
+.accommodation-gallery figure img,
+.accommodation-gallery figure video,
+.ayahuasca-gallery figure img,
+.ayahuasca-gallery figure video {
+  display: block;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+  transition: transform 0.3s;
+}
+
+.accommodation-gallery figure:hover img,
+.accommodation-gallery figure:hover video,
+.ayahuasca-gallery figure:hover img,
+.ayahuasca-gallery figure:hover video {
+  transform: scale(1.05);
+}
+
+/* Caption exakt Bild-Breite, umbrechbar */
+.accommodation-gallery figure figcaption,
+.ayahuasca-gallery figure figcaption {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 4px 8px;
+  font-size: 0.9em;
+  color: #333;
+  word-wrap: break-word;
+  white-space: normal;
+  margin-top: 4px;
+}
+
+/* Drohnenaufnahmen-Galerie */
+.drone-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.drone-gallery figure {
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.drone-gallery img {
+  width: 100%;
+  display: block;
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+
+.drone-gallery img:hover {
+  transform: scale(1.05);
+}
+
+.drone-gallery figcaption {
+  text-align: center;
+  padding: 10px;
+  font-size: 0.9em;
+  background: #f4f4f4;
+}
+
+/* Rezensionen */
+/* Reviews-Carousel */
+.reviews-container {
+  position: relative;
+  max-width: 1200px;
+  padding-right: 24px;
+  padding-left: 34px;
+  overflow: visible;
+  /* Y-Richtung nicht mehr abschneiden */
+}
+
+/* Datum unter dem Text, über dem Reviewer */
+.review-date {
+  display: block;
+  font-size: 0.85em;
+  color: #666;
+  font-style: italic;
+  /* optional: kursiv für Stil */
+  text-align: right;
+  /* rechtsbündig im Karten-Layout */
+}
+
+
+.reviews-carousel {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  scroll-behavior: smooth;
+  /* Scrollbar ausblenden */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  overflow-x: hidden;
+  /* nur horizontales Scrollen erlauben */
+  overflow-y: visible;
+  /* vertikales Überstehen zulassen */
+}
+
+.reviews-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.review {
+  flex: 0 0 350px;
+  /* Breite pro Karte */
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.02), 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Pfeil-Buttons */
+.review-nav {
+  position: absolute;
+  top: 0;
+  /* ganz oben am Container */
+  transform: translateY(80%);
+  /* mittig zum oberen Rand */
+  background: none;
+  color: #888;
+  border: none;
+  padding: 0 10px;
+  font-size: 2em;
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* Hover-Effekt optional */
+.review-nav:hover {
+  color: #555;
+}
+
+/* präzise Links/Rechts-Positionierung */
+.prev-review {
+  left: -20px;
+  /* etwas links neben dem Container */
+}
+
+.next-review {
+  right: -20px;
+  /* etwas rechts neben dem Container */
+}
+
+.review-nav:hover {
+  background: rgba(44, 62, 80, 0.9);
+}
+
+.reviewer {
+  text-align: right;
+  font-style: italic;
+  margin-top: 10px;
+}
+
+.review img.review-image {
+  display: none;
+  margin-top: 10px;
+  border-radius: 8px;
+  transition: opacity 2s ease;
+}
+
+.review.hover-img:hover img.review-image {
+  display: block;
+}
+
+/*  Kontakt-Formular*/
+#kontakt {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+#kontakt h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+#kontakt p {
+  font-size: 1.1em;
+  margin-bottom: 30px;
+  color: #555;
+}
+
+/* Formular-Container */
+#contact-form {
+  max-width: 400px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+/* Labels */
+#contact-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #333;
+}
+
+/* Input-Feld */
+#contact-form input[type="text"]#captcha {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+/* CAPTCHA-Bild */
+#contact-form img {
+  display: block;
+  margin: 0 auto 15px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+}
+
+/* WhatsApp-Button anpassen */
+#contact-form .whatsapp-button {
+  display: block;
+  width: 100%;
+  text-align: center;
+  background: #25d366;
+  color: #fff;
+  font-size: 1.1em;
+  padding: 12px 0;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+  text-decoration: none;
+}
+
+#contact-form .whatsapp-button:hover {
+  background: #1ebe5b;
+}
+
+
+/* Honeypot: versteckt das Feld vor echten Nutzern */
+.hp-field {
+  display: none;
+}
+
+
+/* Footer */
+footer {
+  background: #2c3e50;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
+
+/* Modal (gemeinsam) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  /* vertikal zentrieren */
+  justify-content: center;
+  /* horizontal zentrieren */
+
+  /* damit bei sehr großen Bildern/Videos noch gescrollt werden kann */
+  overflow-y: auto;
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 80%;
+}
+
+.close,
+.closeAccom {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.prev,
+.next,
+.prevAccom,
+.nextAccom {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  padding: 16px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 40px;
+  transition: background 0.3s;
+  user-select: none;
+}
+
+.prev,
+.prevAccom {
+  left: 20px;
+}
+
+.next,
+.nextAccom {
+  right: 20px;
+}
+
+.prev:hover,
+.next:hover,
+.prevAccom:hover,
+.nextAccom:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* Responsive Anpassungen */
+/* @media (max-width: 768px) {
+  header h1 {
+    font-size: 2em;
+  }
+
+  header p {
+    font-size: 1em;
+  }
+
+  nav ul li {
+    margin: 0 10px;
+  }
+
+  .content-flex {
+    flex-direction: column;
+  }
+} */
+/* ==============================
+   Responsive Media Queries
+   (für Bildschirmbreiten von 320px bis 2100px)
+   ============================== */
+
+/* 320px – 400px */
+@media (min-width: 320px) and (max-width: 400px) {
+  html {
+    font-size: 14px;
+  }
+
+  header {
+    height: 16vh;
+  }
+
+  .header-content {
+    bottom: 90px;
+  }
+
+  header h1 {
+    line-height: 20px;
+    font-size: 1.2em;
+  }
+
+  header p {
+    font-size: 0.9em;
+  }
+
+  nav ul li {
+    margin: 0 8px;
+  }
+
+  section {
+    padding: 40px 10px;
+  }
+
+  section h2 {
+    font-size: 1.8em;
+  }
+
+  .content-flex {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .profile-img {
+    max-width: 200px;
+  }
+
+  .content-flex .text {
+    font-size: 0.9em;
+  }
+
+  .review {
+    flex: 0 0 200px;
+    padding: 15px;
+  }
+}
+
+/* 400px – 500px */
+@media (min-width: 400px) and (max-width: 500px) {
+  html {
+    font-size: 15px;
+  }
+
+  header h1 {
+    font-size: 1.6em;
+  }
+
+  header p {
+    font-size: 1em;
+  }
+
+  nav ul li {
+    margin: 0 10px;
+  }
+
+  section {
+    padding: 45px 15px;
+  }
+
+  section h2 {
+    font-size: 2em;
+  }
+
+  .content-flex {
+    gap: 15px;
+  }
+
+  .profile-img {
+    max-width: 220px;
+  }
+
+  .content-flex .text {
+    font-size: 1em;
+  }
+
+  .review {
+    flex: 0 0 280px;
+    padding: 18px;
+  }
+}
+
+/* 500px – 600px */
+@media (min-width: 500px) and (max-width: 600px) {
+  html {
+    font-size: 16px;
+  }
+
+  header h1 {
+    font-size: 1.8em;
+  }
+
+  header p {
+    font-size: 1.1em;
+  }
+
+  nav ul li {
+    margin: 0 12px;
+  }
+
+  section {
+    padding: 50px 20px;
+  }
+
+  section h2 {
+    font-size: 2.2em;
+  }
+
+  .content-flex {
+    gap: 18px;
+  }
+
+  .profile-img {
+    max-width: 240px;
+  }
+
+  .content-flex .text {
+    font-size: 1.05em;
+  }
+
+  .review {
+    flex: 0 0 300px;
+    padding: 20px;
+  }
+}
+
+/* 600px – 750px */
+@media (min-width: 600px) and (max-width: 750px) {
+  html {
+    font-size: 17px;
+  }
+
+  header h1 {
+    font-size: 2em;
+  }
+
+  header p {
+    font-size: 1.2em;
+  }
+
+  nav ul li {
+    margin: 0 14px;
+  }
+
+  section {
+    padding: 55px 25px;
+  }
+
+  section h2 {
+    font-size: 2.3em;
+  }
+
+  .content-flex {
+    gap: 20px;
+  }
+
+  .profile-img {
+    max-width: 260px;
+  }
+
+  .content-flex .text {
+    font-size: 1.1em;
+  }
+
+  .review {
+    flex: 0 0 320px;
+    padding: 22px;
+  }
+}
+
+/* Mobile ≤700px */
+@media (max-width: 700px) {
+
+  /* Hamburger-Button zeigen */
+  .nav-toggle {
+    display: block;
+  }
+
+  /* Standard-Nav verstecken */
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50px;
+    width: calc(100% - 50px);
+    /* Breite des Dropdowns */
+    height: auto;
+    background: rgba(52, 65, 47, 0.9);
+    box-shadow: 4px 0 12px rgba(0, 0, 0, 0.2);
+    border-bottom-left-radius: 10px;
+    flex-direction: column;
+    padding: 1rem 0.5rem;
+    /* Platz fürs Hamburger-Icon */
+    list-style: none;
+    margin: 0;
+    transition: transform 0.3s ease;
+    transform: translateX(-100%);
+    z-index: 1000;
+  }
+
+  /* Wenn .open dazukommt, einblenden */
+  .nav-links.open {
+    display: flex;
+    transform: translateX(0);
+  }
+
+  /* Links im Dropdown */
+  .nav-links li {
+    margin: 0.6rem 0;
+    text-align: left;
+  }
+
+  .nav-links li a {
+    color: #fff;
+    font-size: 1.2rem;
+    text-decoration: none;
+    display: block;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background 0.3s;
+  }
+
+
+  .nav-links li a:hover {
+    background: rgba(0, 0, 0, 0.1);
+  }
+
+  /* Die Sprach-Flags am Ende bleiben im Dropdown */
+  .language-switcher {
+    margin-top: auto;
+    /* ganz unten */
+    padding: 1rem 0;
+  }
+}
+
+
+/* 750px – 1000px */
+@media (min-width: 750px) and (max-width: 1000px) {
+  html {
+    font-size: 18px;
+  }
+
+  header {
+    height: 30vh;
+  }
+
+  .header-content {
+    top: 10px;
+    bottom: auto;
+  }
+
+  header h1 {
+    font-size: 2.5em;
+  }
+
+  header p {
+    font-size: 1.3em;
+  }
+
+  nav ul li {
+    margin: 0 16px;
+  }
+
+  section {
+    padding: 60px 30px;
+  }
+
+  section h2 {
+    font-size: 2.5em;
+  }
+
+  .content-flex {
+    gap: 24px;
+  }
+
+  .profile-img {
+    max-width: 300px;
+  }
+
+  .content-flex .text {
+    font-size: 1.15em;
+  }
+
+  .review {
+    flex: 0 0 350px;
+    padding: 24px;
+  }
+}
+
+/* max 1000px */
+@media screen and (max-width: 1000px) {
+
+  /* a) die alten im Nav verstecken */
+  nav ul li.language-switcher {
+    display: none !important;
+  }
+
+  /* b) die neuen im Header zeigen */
+  .header-flags {
+    display: flex;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    width: 100%;
+    /* über die ganze Breite */
+    padding: 0.5rem 1rem;
+    /* etwas Innenabstand */
+    justify-content: flex-start;
+    gap: 1rem;
+    z-index: 1000;
+  }
+
+  /* Größere Icons */
+  .header-flags img {
+    width: 40px;
+    height: 28px;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+
+  .header-flags img:hover {
+    transform: scale(1.1);
+  }
+}
+
+
+
+
+/* 1000px – 2100px */
+@media (min-width: 1000px) and (max-width: 2100px) {
+  html {
+    font-size: 19px;
+  }
+
+  header {
+    height: 35vh;
+  }
+
+  header h1 {
+    font-size: 3em;
+  }
+
+  header p {
+    font-size: 1.2em;
+  }
+
+  nav ul li {
+    margin: 0 18px;
+  }
+
+  section {
+    padding: 60px 20px;
+  }
+
+  section h2 {
+    font-size: 2.5em;
+  }
+
+  .content-flex {
+    gap: 30px;
+  }
+
+  .profile-img {
+    max-width: 300px;
+  }
+
+  .content-flex .text {
+    font-size: 1.1em;
+  }
+
+  .review {
+    flex: 0 0 380px;
+    padding: 26px;
+  }
+}
